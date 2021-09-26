@@ -1,0 +1,31 @@
+
+
+**** To text in csv file line by line
+Using the csv module:
+
+import csv
+
+with open('file.csv', newline='') as f:
+    reader = csv.reader(f)
+    data = list(reader)
+
+print(data)
+
+****
+
+**** dataset taken by function is in the dummy variable form ...where each list object is given 1/0 value bieng in the transaction****
+
+***how to create lists into bollean values to prepare for function input - 
+	https://stackoverflow.com/questions/29034928/pandas-convert-a-column-of-list-to-dummies****
+
+***library used for association - 
+from mlxtend.frequent_patterns import apriori,association_rules # for finding rules
+
+***functn -
+# Now first we find rules based on support and confidence
+
+frequent_items = apriori(df,min_support = 0.015,max_len = 8 , use_colnames = True)
+
+# to get the most frequent items 
+frequent_items.sort_values("support",ascending = False , inplace=True)
+
